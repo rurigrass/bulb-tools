@@ -140,14 +140,14 @@ const TariffsByRegion = {
     current: {
       credit: {
         elec: {
-          oneRate: 0.13986,
+          oneRate: 0.14107,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.18993
+          standing: 0.19791
         },
-        gas: 0.02737,
+        gas: 0.03061,
         standing: 0.20444
       },
       prepay: {
@@ -166,58 +166,608 @@ const TariffsByRegion = {
   },
   //
   "_D - Merseyside and North Wales": {
-    elec: 0.14154,
-    gas: 0.03696,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.14154,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.03696,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.15291,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.18741
+        },
+        gas: 0.03099,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_E - Midlands": {
-    elec: 0.136395,
-    gas: 0.036015,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.136395,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.034996,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.14294,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20411
+        },
+        gas: 0.02933,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_F - Northern": {
-    elec: 0.13713,
-    gas: 0.034996,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.13713,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.034996,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.14198,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.22532
+        },
+        gas: 0.02795,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_G - North Western": {
-    elec: 0.134295,
-    gas: 0.035301,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.134295,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.035301,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.14203,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.19592
+        },
+        gas: 0.02823,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_H - Southern": {
-    elec: 0.135555,
-    gas: 0.03633,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.135555,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.03633,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.14179,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20642
+        },
+        gas: 0.02924,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_J - South Eastern": {
-    elec: 0.139755,
-    gas: 0.03612,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.139755,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.03612,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.14814,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20012
+        },
+        gas: 0.02946,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_K - South Wales": {
-    elec: 0.143115,
-    gas: 0.03528,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.143115,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.03528,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.15071,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.19161
+        },
+        gas: 0.02786,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_L - South Western": {
-    elec: 0.145005,
-    gas: 0.037649,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.145005,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.037649,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.15354,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20085
+        },
+        gas: 0.02963,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_M - Yorkshire": {
-    elec: 0.1323,
-    gas: 0.034178,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.1323,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.034178,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.13683,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.22626
+        },
+        gas: 0.02828,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_N - South Scotland": {
-    elec: 0.13503,
-    gas: 0.03423,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.13503,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.03423,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.14150,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20558
+        },
+        gas: 0.02920,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   //
   "_P - North Scotland": {
-    elec: 0.145425,
-    gas: 0.033705,
+    previous: {
+      credit: {
+        elec: {
+          oneRate: 0.145425,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.20444
+        },
+        gas: 0.033705,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
+    current: {
+      credit: {
+        elec: {
+          oneRate: 0.15055,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.22500
+        },
+        gas: 0.02863,
+        standing: 0.20444
+      },
+      prepay: {
+        elec: {
+          oneRate: 0.13587,
+          twoRate: {
+            day: 0,
+            night: 0
+          },
+          standing: 0.2044
+        },
+        gas: 0.033705,
+        standing: 0.2044
+      },
+    },
   },
   "Not mainland": {
     elec: 0.0000,

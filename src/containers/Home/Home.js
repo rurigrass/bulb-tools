@@ -6,6 +6,9 @@ const Home = () => {
             <Link to='/bill-calculator'>
                 Bill Calculator
             </Link>
+            <Link to='/tariff-finder'>
+                Tariff Finder
+            </Link>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import RadioGroup from './RadioToggle/RadioGroup';
-import { Postcode } from './Inputs/Postcode';
+import RadioGroup from '../ReusableComponents/RadioGroup';
+import { Postcode } from '../ReusableComponents/Postcode';
 import EnergyInput from './Inputs/EnergyInput';
 import NextStatementDateInput from "./Inputs/NextStatementDateInput";
 
@@ -10,7 +10,7 @@ import TariffsByRegion from "../../data/TariffsByRegion";
 
 class BillCalculator extends Component {
   state = {
-    meterType: "1-rate",
+    meterType: "oneRate",
     energyType: "Electricity",
     firstEnergyAmount: null,
     firstReadingDate: null,
@@ -62,7 +62,7 @@ class BillCalculator extends Component {
             changeFn={e => {
               this.setState({ meterType: e.target.name });
             }}
-            options={["1-rate", "2-rate"]}
+            options={["oneRate", "twoRate"]}
             selectedOption={this.state.meterType}
           /> */}
 
