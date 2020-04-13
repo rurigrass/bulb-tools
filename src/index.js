@@ -3,21 +3,19 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
-import Routes from './routes';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <React.StrictMode>
-        <Routes />
-      </React.StrictMode>
-    </BrowserRouter>
-  )
-}
+const app = (
+  <BrowserRouter>
+    {/* <React.StrictMode> */}
+    <App />
+    {/* </React.StrictMode> */}
+  </BrowserRouter>
+)
 
 ReactDOM.render(
-  <App />,
+  app,
   document.getElementById('root')
 );
 
