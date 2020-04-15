@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import RadioGroup from '../ReusableComponents/RadioGroup';
 import { Postcode } from '../ReusableComponents/Postcode';
-import EnergyInput from './Inputs/EnergyInput';
-import NextStatementDateInput from "./Inputs/NextStatementDateInput";
+import EnergyInput from '../ReusableComponents/EnergyInput';
+import NextStatementDateInput from "../ReusableComponents/NextStatementDateInput";
 
 import RegionByPostcode from "../../data/RegionByPostcode";
 import TariffsByRegion from "../../data/TariffsByRegion";

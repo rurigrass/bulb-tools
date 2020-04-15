@@ -11,20 +11,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.03371,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03371,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13073,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03498,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -37,20 +41,24 @@ const TariffsByRegion = {
           },
           standing: 0.20558
         },
-        gas: 0.02725,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02725,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13848,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26674
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03086,
+          standing: 0.28308
+        },
       },
     }
   },
@@ -66,20 +74,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.033453,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.033453,
+          standing: 0.20444
+        }
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.12810,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03504,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -92,20 +104,24 @@ const TariffsByRegion = {
           },
           standing: 0.18993
         },
-        gas: 0.02737,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02737,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13592,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.2511
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03073,
+          standing: 0.28308
+        },
       },
     }
   },
@@ -121,20 +137,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.036782,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.036782,
+          standing: 0.20444
+        }
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.12453,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03631,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -147,20 +167,24 @@ const TariffsByRegion = {
           },
           standing: 0.19791
         },
-        gas: 0.03061,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03061,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13662,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.25908
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03208,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -176,20 +200,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.03696,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03696,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13755,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03612,
+          standing: 0.28308
+        }
       },
     },
     current: {
@@ -202,20 +230,24 @@ const TariffsByRegion = {
           },
           standing: 0.18741
         },
-        gas: 0.03099,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03099,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.15047,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.24858
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03277,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -231,20 +263,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.034996,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.034996,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13503,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03620,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -257,20 +293,24 @@ const TariffsByRegion = {
           },
           standing: 0.20411
         },
-        gas: 0.02933,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02933,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14088,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26527
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03257,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -286,20 +326,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.034996,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.034996,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13052,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03470,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -312,20 +356,24 @@ const TariffsByRegion = {
           },
           standing: 0.22532
         },
-        gas: 0.02795,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02795,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13666,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.28648
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03157,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -341,20 +389,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.035301,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.035301,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13241,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03621,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -367,20 +419,24 @@ const TariffsByRegion = {
           },
           standing: 0.19592
         },
-        gas: 0.02823,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02823,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13650,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.25708
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03408,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -396,20 +452,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.03633,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03633,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.12989,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03731,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -422,20 +482,24 @@ const TariffsByRegion = {
           },
           standing: 0.20642
         },
-        gas: 0.02924,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02924,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13967,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26758
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03360,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -451,20 +515,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.03612,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03612,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13356,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03678,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -477,20 +545,24 @@ const TariffsByRegion = {
           },
           standing: 0.20012
         },
-        gas: 0.02946,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02946,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14387,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26128
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03260,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -506,20 +578,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.03528,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03528,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13734,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03554,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -532,20 +608,24 @@ const TariffsByRegion = {
           },
           standing: 0.19161
         },
-        gas: 0.02786,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02786,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14867,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.25278
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03169,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -561,20 +641,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.037649,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.037649,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14133,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03776,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -587,20 +671,24 @@ const TariffsByRegion = {
           },
           standing: 0.20085
         },
-        gas: 0.02963,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02963,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14591,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26202
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03519,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -616,20 +704,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.034178,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.034178,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13041,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03498,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -642,20 +734,24 @@ const TariffsByRegion = {
           },
           standing: 0.22626
         },
-        gas: 0.02828,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02828,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13779,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.28743
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03132,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -671,20 +767,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.03423,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.03423,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13388,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03568,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -697,20 +797,24 @@ const TariffsByRegion = {
           },
           standing: 0.20558
         },
-        gas: 0.02920,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02920,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.13697,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26674
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03289,
+          standing: 0.28308
+        },
       },
     },
   },
@@ -726,20 +830,24 @@ const TariffsByRegion = {
           },
           standing: 0.20444
         },
-        gas: 0.033705,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.033705,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14049,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.26560
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03533,
+          standing: 0.28308
+        },
       },
     },
     current: {
@@ -752,20 +860,24 @@ const TariffsByRegion = {
           },
           standing: 0.22500
         },
-        gas: 0.02863,
-        standing: 0.20444
+        gas: {
+          oneRate: 0.02863,
+          standing: 0.20444
+        },
       },
       prepay: {
         elec: {
-          oneRate: 0.13587,
+          oneRate: 0.14475,
           twoRate: {
             day: 0,
             night: 0
           },
-          standing: 0.2044
+          standing: 0.28617
         },
-        gas: 0.033705,
-        standing: 0.2044
+        gas: {
+          oneRate: 0.03215,
+          standing: 0.28308
+        },
       },
     },
   },

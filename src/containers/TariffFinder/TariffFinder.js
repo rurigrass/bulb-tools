@@ -10,9 +10,9 @@ import TariffsByRegion from "../../data/TariffsByRegion";
 class TariffFinder extends Component {
 
     state = {
-        meterType: "Credit",
-        meterRate: "1 rate",
         energyType: "Electricity",
+        meterType: "credit",
+        meterRate: "1 rate",
         tariff: null
     }
 
@@ -40,7 +40,7 @@ class TariffFinder extends Component {
 
         return (
             <div style={{ maxWidth: "400px", margin: "auto" }}>
-                <div className="ui container" style={{ marginTop: "-20px" }}>
+                <div className="ui container">
                     <h1 style={{ textAlign: "center", color: "white" }}>Tariff Finder</h1>
                     <div className="ui segment">
                         <Postcode
@@ -52,7 +52,7 @@ class TariffFinder extends Component {
                             changeFn={e => {
                                 this.setState({ meterType: e.target.name });
                             }}
-                            options={["Credit", "Prepay"]}
+                            options={["credit", "prepay"]}
                             selectedOption={this.state.meterType}
                         />
                         <RadioGroup
@@ -65,7 +65,9 @@ class TariffFinder extends Component {
                         />
                     </div>
                     {this.state.tariff ? <TariffFinderResult
-                        info={this.state}
+                        tariff={this.state.tariff}
+                        meterType={this.state.meterType}
+                        meterRate={this.state.meterRate}
                     /> : null}
                 </div>
             </div>

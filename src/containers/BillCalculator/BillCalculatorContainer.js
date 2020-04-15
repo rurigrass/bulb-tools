@@ -104,8 +104,8 @@ class BillCalculatorContainer extends Component {
 
     return (
       <div style={{ maxWidth: "400px", margin: "auto" }}>
-        <div className="ui container" style={{ marginTop: "-20px" }}>
-          <h1 style={{ textAlign: "center", color: "white" }}>Energy Price Calculator</h1>
+        <div className="ui container">
+          <h1 style={{ textAlign: "center", color: "white" }}>Bill Calculator</h1>
           <BillCalculator onSubmit={this.calculateResult} />
           {calculatorResult}
         </div>
