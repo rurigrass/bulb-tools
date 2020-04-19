@@ -27,18 +27,31 @@ class DisputeCalculator extends Component {
         const daysTotal = differenceInDays(this.state.secondReadingDate, this.state.firstReadingDate);
         //energy total 1 day
         const energyTotalOneDay = energyTotal / daysTotal;
-        //days til dispute date
-        const daysUntilDispute = differenceInDays(this.state.nextStatementDate, this.state.secondReadingDate);
-        //total energy use until dispute date
-        const energyTotalUntilDispute = energyTotalOneDay * daysUntilDispute;
-        //sencond read + energyTotal until dispute
-        const disputeReading = +this.state.secondEnergyAmount + energyTotalUntilDispute;
+        if (this.state.firstReadingDate < this.state.secondReadingDate && this.state.secondReadingDate < this.state.nextStatementDate) {
+            //days til dispute date
+            const daysUntilDispute = differenceInDays(this.state.nextStatementDate, this.state.secondReadingDate);
+            //total energy use until dispute date
+            const energyTotalUntilDispute = energyTotalOneDay * daysUntilDispute;
+            //sencond read + energyTotal until dispute
+            const disputeReading = +this.state.secondEnergyAmount + energyTotalUntilDispute;
+            this.setState({ disputeReading })
+        } else if (this.state.firstReadingDate < this.state.secondReadingDate && this.state.firstReadingDate > this.state.nextStatementDate) {
+            //days from dispute date
+            const daysSinceDispute = differenceInDays(this.state.firstReadingDate, this.state.nextStatementDate);
+            //total energy use from dispute date
+            const energyTotalSinceDispute = energyTotalOneDay * daysSinceDispute;
+            //first read - energyTotal from dispute
+            const disputeReading = +this.state.firstEnergyAmount - energyTotalSinceDispute;
+            this.setState({ disputeReading })
+        } else {
+            const disputeReading = 0
+            this.setState({ disputeReading })
+        }
 
-        this.setState({ disputeReading })
     };
     render() {
 
-        this.state.disputeReading ? console.log("true") : console.log("false");
+        // this.state.disputeReading ? console.log("true") : console.log("false");
 
         return (
             <div style={{ maxWidth: "400px", margin: "auto" }}>
@@ -104,7 +117,7 @@ class DisputeCalculator extends Component {
                 <div>
 
                     {this.state.disputeReading ? <DisputeCalculatorResult
-                        disputeReading={this.state.disputeReading}
+                        disputeReading={this.state.disputeReading} energyType={this.state.energyType}
                     /> : null}
                 </div>
             </div>

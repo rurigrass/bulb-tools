@@ -46,7 +46,7 @@ class BillCalculatorContainer extends Component {
       //CALC UNIT CHARGE GAS
       const byVCF = energyTotal * 1.02264 * 40;
       const byCV = byVCF / 3.6;
-      const kWHCF = byCV * info.tariff.current.credit.gas;
+      const kWHCF = byCV * info.tariff.current.credit.gas.oneRate;
       unitTotal = kWHCF;
     }
     // console.log(unitTotal);
@@ -84,6 +84,10 @@ class BillCalculatorContainer extends Component {
   };
 
   render() {
+
+    console.log(this.state.unitTotal);
+
+
     let calculatorResult = null;
     if (this.state.unitTotal) {
       calculatorResult = (
