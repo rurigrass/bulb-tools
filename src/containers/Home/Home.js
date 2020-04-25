@@ -1,36 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+`
+
+const Card = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #01AB55;
+    margin: 1.5rem;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 15px;
+    cursor: pointer;
+`
 const Home = () => {
     return (
-        <div className="ui cards" style={{ margin: "20px" }}>
+        <Wrapper>
             <Link to='/bill-calculator'>
-                <div className="ui green card" style={{ margin: "20px" }}>
-                    <div className="content">
-                        <div className="header">
-                            Bill Calculator
-                            </div>
-                    </div>
-                </div>
+                <Card>
+                    Bill Calculator
+                </Card>
             </Link>
             <Link to='/tariff-finder'>
-                <div className="ui green card" style={{ margin: "20px" }}>
-                    <div className="content">
-                        <div className="header">
-                            Tariff Finder
-                            </div>
-                    </div>
-                </div>
+                <Card>
+                    Tariff Finder
+                </Card>
             </Link>
             <Link to='/dispute-calculator'>
-                <div className="ui green card" style={{ margin: "20px" }}>
-                    <div className="content">
-                        <div className="header">
-                            Dispute Calculator
-                        </div>
-                    </div>
-                </div>
+                <Card>
+                    Dispute Calculator
+                </Card>
             </Link>
-        </div>
+        </Wrapper>
     );
 };
 
