@@ -13,11 +13,16 @@ const Card = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #01AB55;
-    margin: 1.5rem;
-    width: 15rem;
-    height: 15rem;
+    margin: 1.5em;
+    width: 15em;
+    height: 15em;
     border-radius: 15px;
     cursor: pointer;
+`
+
+const CardImage = styled.img`
+    width: 10em;
+    margin-left: 1em;
 `
 const Home = () => {
     return (

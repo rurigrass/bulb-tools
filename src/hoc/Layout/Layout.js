@@ -12,21 +12,22 @@ const Header = styled.header`
     justify-content: space-between;
     background-color: #001A4D;
     height: 3.5rem;
-    margin-bottom: .5rem
-`
-
+    margin-bottom: .5rem;
+    `
+    
 const FeedbackButton = styled.a`
     background-color: #E94EA5;
     color: white;
-    padding: .1rem .5rem;
-    border-radius: 1rem;
+    padding: .2em 1em;
+    border-radius: 25em;
     margin-right: 1rem;
-`
+    font-size: 16px;
+    `
 
 const HeaderLogo = styled.img`
     width: 5rem;
     margin-left: 1rem;
-`
+    `
 const Layout = (props) => {
     return (
         <Aux>
