@@ -18,10 +18,10 @@ const Header = styled.header`
 const FeedbackButton = styled.a`
     background-color: #E94EA5;
     color: white;
-    padding: .2em 1em;
+    padding: 3px 1rem;
     border-radius: 25em;
     margin-right: 1rem;
-    font-size: 16px;
+    font-size: 16px !important;
     `
 
 const HeaderLogo = styled.img`
@@ -37,7 +37,7 @@ const Layout = (props) => {
                     href="https://forms.gle/ajZbBee2py9M9QKv6"
                     target="_blank"
                     rel="noopener noreferrer">
-                    Feedback
+                    Tell us what you think
                 </FeedbackButton>
             </Header>
             <main>{props.children}</main>

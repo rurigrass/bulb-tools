@@ -20,10 +20,11 @@ const Card = styled.div`
     cursor: pointer;
 `
 
-const CardImage = styled.img`
-    width: 10em;
-    margin-left: 1em;
-`
+// I PLAN TO INSERT THE IMAGES
+// const CardImage = styled.img`
+//     width: 10em;
+//     margin-left: 1em;
+// `
 const Home = () => {
     return (
         <Wrapper>
