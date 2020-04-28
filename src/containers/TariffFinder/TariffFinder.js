@@ -30,13 +30,12 @@ class TariffFinder extends Component {
 
             this.setState({ tariff })
         } else {
-
+            
         }
     }
 
     render() {
         console.log(this.state);
-
 
         return (
             <div style={{ maxWidth: "400px", margin: "auto" }}>
