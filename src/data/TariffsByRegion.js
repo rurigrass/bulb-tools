@@ -6,8 +6,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.13587,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.15939,
+            night: 0.075915
           },
           standing: 0.20444
         },
@@ -36,8 +36,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14255,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.168399,
+            night: 0.075915
           },
           standing: 0.20558
         },
@@ -69,8 +69,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.132615,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.153825,
+            night: 0.082005
           },
           standing: 0.20444
         },
@@ -99,8 +99,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.13986,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1602195,
+            night: 0.082005
           },
           standing: 0.18993
         },
@@ -132,8 +132,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.130095,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.15288,
+            night: 0.07455
           },
           standing: 0.20444
         },
@@ -162,8 +162,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14107,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.164472,
+            night: 0.07455
           },
           standing: 0.19791
         },
@@ -195,8 +195,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14154,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.164955,
+            night: 0.0861
           },
           standing: 0.20444
         },
@@ -225,8 +225,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.15291,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1844535,
+            night: 0.0861
           },
           standing: 0.18741
         },
@@ -258,8 +258,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.136395,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.15729,
+            night: 0.085785
           },
           standing: 0.20444
         },
@@ -288,8 +288,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14294,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1655115,
+            night: 0.085785
           },
           standing: 0.20411
         },
@@ -321,8 +321,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.13713,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.156135,
+            night: 0.085785
           },
           standing: 0.20444
         },
@@ -351,8 +351,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14198,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1668765,
+            night: 0.085785
           },
           standing: 0.22532
         },
@@ -384,8 +384,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.134295,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.15645,
+            night: 0.080745
           },
           standing: 0.20444
         },
@@ -414,8 +414,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14203,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.16926,
+            night: 0.080745
           },
           standing: 0.19592
         },
@@ -447,8 +447,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.135555,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.15729,
+            night: 0.08148
           },
           standing: 0.20444
         },
@@ -477,8 +477,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14179,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1662675,
+            night: 0.08148
           },
           standing: 0.20642
         },
@@ -510,8 +510,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.139755,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.16296,
+            night: 0.079065
           },
           standing: 0.20444
         },
@@ -540,8 +540,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14814,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1749405,
+            night: 0.079065
           },
           standing: 0.20012
         },
@@ -573,8 +573,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.143115,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.162015,
+            night: 0.0903
           },
           standing: 0.20444
         },
@@ -603,8 +603,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.15071,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1743315,
+            night: 0.0903
           },
           standing: 0.19161
         },
@@ -636,8 +636,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.145005,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.16716,
+            night: 0.09051
           },
           standing: 0.20444
         },
@@ -666,8 +666,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.15354,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.177471,
+            night: 0.09051
           },
           standing: 0.20085
         },
@@ -699,8 +699,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.1323,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.152355,
+            night: 0.08652
           },
           standing: 0.20444
         },
@@ -729,8 +729,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.13683,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.158487,
+            night: 0.08652
           },
           standing: 0.22626
         },
@@ -762,8 +762,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.13503,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.156975,
+            night: 0.087045
           },
           standing: 0.20444
         },
@@ -792,8 +792,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.14150,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.164598,
+            night: 0.087045
           },
           standing: 0.20558
         },
@@ -825,8 +825,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.145425,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.1617,
+            night: 0.102795
           },
           standing: 0.20444
         },
@@ -855,8 +855,8 @@ const TariffsByRegion = {
         elec: {
           oneRate: 0.15055,
           twoRate: {
-            day: 0,
-            night: 0
+            day: 0.167706,
+            night: 0.102795
           },
           standing: 0.22500
         },
