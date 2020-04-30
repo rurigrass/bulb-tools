@@ -67,7 +67,7 @@ class DisputeCalculator extends Component {
                                 options={["Electricity", "Gas"]}
                                 selectedOption={this.state.energyType}
                             />
-                            First reading
+                            Earlier Reading
                             <EnergyInput
                                 energyAmount={e => {
                                     this.setState({ firstEnergyAmount: e.target.value });
@@ -81,7 +81,7 @@ class DisputeCalculator extends Component {
                             />
                             <br />
                             <br />
-                            Second reading
+                            Later Reading
                             <EnergyInput
                                 energyAmount={e => {
                                     this.setState({ secondEnergyAmount: e.target.value });

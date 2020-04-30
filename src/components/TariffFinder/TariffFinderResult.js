@@ -12,14 +12,14 @@ const TariffFinderResult = (props) => {
         elecUnitRate =
             <tr>
                 <td data-label="Unit Rate">Unit Rate</td>
-                <td data-label="Energy Cost">{tariff.current[meterType].elec.oneRate}p per kWh</td>
+                <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.oneRate * 100).toFixed(4)}p per kWh</td>
             </tr>
     } else {
-        elecUnitRate = Object.keys(tariff.current[meterType].elec.twoRate).map(rate => {
+        elecUnitRate = Object.keys(tariff.residential.current[meterType].elec.twoRate).map(rate => {
             return (
                 <tr key={rate}>
                     <td data-label="Unit Rate">{rate} Rate</td>
-                    <td data-label="Energy Cost">{tariff.current[meterType].elec.twoRate[rate]}p per kWh</td>
+                    <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.twoRate[rate] * 100).toFixed(4)}p per kWh</td>
                 </tr>
             )
         })
@@ -36,7 +36,7 @@ const TariffFinderResult = (props) => {
                         {elecUnitRate}
                         <tr>
                             <td data-label="Unit Rate">Standing Charge</td>
-                            <td data-label="Energy Cost">{tariff.current[meterType].elec.standing}p per day (£{(tariff.current[meterType].elec.standing * 365).toFixed(2)} per year)</td>
+                            <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.standing * 100).toFixed(3)}p per day (£{(tariff.residential.current[meterType].elec.standing * 365).toFixed(2)} per year)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -49,11 +49,11 @@ const TariffFinderResult = (props) => {
                     <tbody>
                         <tr>
                             <td data-label="Unit Rate">Unit Rate</td>
-                            <td data-label="Energy Cost">{tariff.current[meterType].gas.oneRate}p per kWh</td>
+                            <td data-label="Energy Cost">{(tariff.residential.current[meterType].gas.oneRate * 100).toFixed(4)}p per kWh</td>
                         </tr>
                         <tr>
                             <td data-label="Unit Rate">Standing Charge</td>
-                            <td data-label="Energy Cost">{tariff.current[meterType].gas.standing}p per day (£{(tariff.current[meterType].elec.standing * 365).toFixed(2)} per year)</td>
+                            <td data-label="Energy Cost">{(tariff.residential.current[meterType].gas.standing * 100).toFixed(3)}p per day (£{(tariff.residential.current[meterType].elec.standing * 365).toFixed(2)} per year)</td>
                         </tr>
                     </tbody>
                 </table>

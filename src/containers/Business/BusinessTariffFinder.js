@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 
 import { Postcode } from "../../components/ReusableComponents/Postcode";
-import RadioGroup from "../../components/ReusableComponents/RadioGroup";
-import TariffFinderResult from "../../components/TariffFinder/TariffFinderResult";
+import BusinessTariffFinderResult from "../../components/Business/BusinessTariffFinderResult";
 
 import RegionByPostcode from "../../data/RegionByPostcode";
 import TariffsByRegion from "../../data/TariffsByRegion";
 
-class TariffFinder extends Component {
+class BusinessTariffFinder extends Component {
 
     state = {
-        meterType: "credit",
-        meterRate: "1 rate",
         tariff: null
     }
 
@@ -37,33 +34,15 @@ class TariffFinder extends Component {
         return (
             <div style={{ maxWidth: "400px", margin: "auto" }}>
                 <div className="ui container">
-                    <h1 style={{ textAlign: "center", color: "white" }}>Tariff Finder</h1>
+                    <h1 style={{ textAlign: "center", color: "white" }}>Business Tariff Finder</h1>
                     <div className="ui segment">
                         <Postcode
                             //brings back the postcode inputted 
                             regionFn={e => { this.filterPostcode(e.target.value) }}
                         />
-                        <RadioGroup
-                            // name="Fuel Type"
-                            changeFn={e => {
-                                this.setState({ meterType: e.target.name });
-                            }}
-                            options={["credit", "prepay"]}
-                            selectedOption={this.state.meterType}
-                        />
-                        <RadioGroup
-                            // name="Fuel Type"
-                            changeFn={e => {
-                                this.setState({ meterRate: e.target.name });
-                            }}
-                            options={["1 rate", "2 rate"]}
-                            selectedOption={this.state.meterRate}
-                        />
                     </div>
-                    {this.state.tariff ? <TariffFinderResult
+                    {this.state.tariff ? <BusinessTariffFinderResult
                         tariff={this.state.tariff}
-                        meterType={this.state.meterType}
-                        meterRate={this.state.meterRate}
                     /> : null}
                 </div>
             </div>
@@ -71,4 +50,4 @@ class TariffFinder extends Component {
     }
 }
 
-export default TariffFinder;
+export default BusinessTariffFinder;

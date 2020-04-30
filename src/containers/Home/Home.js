@@ -43,6 +43,11 @@ const Home = () => {
                     Dispute Calculator
                 </Card>
             </Link>
+            <Link to='/business'>
+                <Card>
+                    Business
+                </Card>
+            </Link>
         </Wrapper>
     );
 };
