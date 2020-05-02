@@ -18,7 +18,7 @@ const TariffFinderResult = (props) => {
         elecUnitRate = Object.keys(tariff.residential.current[meterType].elec.twoRate).map(rate => {
             return (
                 <tr key={rate}>
-                    <td data-label="Unit Rate">{rate} Rate</td>
+                    <td data-label="Unit Rate">{rate.charAt(0).toUpperCase() + rate.slice(1)} Rate</td>
                     <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.twoRate[rate] * 100).toFixed(4)}p per kWh</td>
                 </tr>
             )
@@ -29,7 +29,7 @@ const TariffFinderResult = (props) => {
         <div>
             <div className="ui segment">
                 <div className="ui header">
-                    {meterType} Electricity
+                    {meterType.charAt(0).toUpperCase() + meterType.slice(1)} Electricity
                 </div>
                 <table className="ui very basic collapsing celled table">
                     <tbody>
@@ -43,7 +43,7 @@ const TariffFinderResult = (props) => {
             </div>
             <div className="ui segment">
                 <div className="ui header">
-                    {meterType} Gas
+                    {meterType.charAt(0).toUpperCase() + meterType.slice(1)} Gas
                 </div>
                 <table className="ui very basic collapsing celled table">
                     <tbody>

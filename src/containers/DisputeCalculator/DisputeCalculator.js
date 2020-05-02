@@ -11,6 +11,7 @@ class DisputeCalculator extends Component {
 
     state = {
         energyType: "Electricity",
+        meterRate: "oneRate",
         firstEnergyAmount: null,
         firstReadingDate: null,
         secondEnergyAmount: null,
@@ -67,6 +68,15 @@ class DisputeCalculator extends Component {
                                 options={["Electricity", "Gas"]}
                                 selectedOption={this.state.energyType}
                             />
+                            {this.state.energyType === "Electricity" ? (
+                                <RadioGroup
+                                    name="Meter Rate"
+                                    changeFn={e => {
+                                        this.setState({ meterRate: e.target.name });
+                                    }}
+                                    options={["oneRate", "twoRate"]}
+                                    selectedOption={this.state.meterRate}
+                                />) : (<div></div>)}
                             Earlier Reading
                             <EnergyInput
                                 energyAmount={e => {
