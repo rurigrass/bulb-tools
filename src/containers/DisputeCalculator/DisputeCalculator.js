@@ -52,6 +52,7 @@ class DisputeCalculator extends Component {
     };
     render() {
 
+
         // this.state.disputeReading ? console.log("true") : console.log("false");
 
         return (
@@ -87,6 +88,7 @@ class DisputeCalculator extends Component {
                                     this.setState({ firstReadingDate });
                                 }}
                                 energyType={this.state.energyType}
+                                meterRate={this.state.meterRate}
                                 readingType="first"
                             />
                             <br />
@@ -99,8 +101,9 @@ class DisputeCalculator extends Component {
                                 readingDate={e => {
                                     const secondReadingDate = new Date(`${e.target.value}`);
                                     this.setState({ secondReadingDate });
-                                }}
+                                }}                                
                                 energyType={this.state.energyType}
+                                meterRate={this.state.meterRate}
                                 readingType="second"
                             />
                             <br />

@@ -12,6 +12,7 @@ class BillCalculator extends Component {
   state = {
     meterType: "credit",
     energyType: "Electricity",
+    meterRate: "oneRate",
     firstEnergyAmount: null,
     firstReadingDate: null,
     secondEnergyAmount: null,
@@ -94,6 +95,7 @@ class BillCalculator extends Component {
               this.setState({ firstReadingDate });
             }}
             energyType={this.state.energyType}
+            meterRate={this.state.meterRate}
             readingType="first"
           />
           <br />
@@ -108,6 +110,7 @@ class BillCalculator extends Component {
               this.setState({ secondReadingDate });
             }}
             energyType={this.state.energyType}
+            meterRate={this.state.meterRate}
             readingType="second"
           />
           <br />

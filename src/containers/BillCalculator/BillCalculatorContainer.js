@@ -10,6 +10,7 @@ class BillCalculatorContainer extends Component {
   state = {
     meterType: null,
     energyType: null,
+    meterRate: null,
     unitTotal: null,
     standingTotal: null,
     priceTotal: null,
