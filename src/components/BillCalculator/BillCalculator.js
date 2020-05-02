@@ -10,7 +10,7 @@ import TariffsByRegion from "../../data/TariffsByRegion";
 
 class BillCalculator extends Component {
   state = {
-    meterType: "oneRate",
+    meterType: "credit",
     energyType: "Electricity",
     firstEnergyAmount: null,
     firstReadingDate: null,
@@ -38,8 +38,8 @@ class BillCalculator extends Component {
       const tariff = TariffsByRegion[GSP]
       // TODO validate that we have the tariff and show error if we don't
       console.log(GSP);
-      
-      this.setState({tariff})
+
+      this.setState({ tariff })
     } else {
 
     }
@@ -65,6 +65,15 @@ class BillCalculator extends Component {
             options={["oneRate", "twoRate"]}
             selectedOption={this.state.meterType}
           /> */}
+
+          <RadioGroup
+            name="Meter Type"
+            changeFn={e => {
+              this.setState({ meterType: e.target.name });
+            }}
+            options={["credit", "prepay"]}
+            selectedOption={this.state.meterType}
+          />
 
           <RadioGroup
             name="Fuel Type"

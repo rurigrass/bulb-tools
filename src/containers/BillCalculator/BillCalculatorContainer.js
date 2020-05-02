@@ -8,6 +8,7 @@ import subMonths from 'date-fns/subMonths'
 class BillCalculatorContainer extends Component {
 
   state = {
+    meterType: null,
     energyType: null,
     unitTotal: null,
     standingTotal: null,
@@ -21,7 +22,9 @@ class BillCalculatorContainer extends Component {
   };
   calculateResult = info => {
 
-    console.log(info.tariff);
+    console.log(info);
+    console.log(this.state.meterType);
+    
 
     const energyTotal = info.secondEnergyAmount - info.firstEnergyAmount;
     // const timeAmount = info.secondReadingDate - info.firstReadingDate;
@@ -32,21 +35,21 @@ class BillCalculatorContainer extends Component {
     let unitTotal, standingTotal, priceTotal;
     //CALCULATE STANDING CHARGE
     if (info.energyType === "Electricity") {
-      const longResult = daysTotal * info.tariff.residential.current.credit.elec.standing;
+      const longResult = daysTotal * info.tariff.residential.current[info.meterType].elec.standing;
       standingTotal = longResult;
     } else {
-      const longResult = daysTotal * info.tariff.residential.current.credit.gas.standing;
+      const longResult = daysTotal * info.tariff.residential.current[info.meterType].gas.standing;
       standingTotal = longResult;
     }
     //CALC UNIT CHARGE ELEC
     if (info.energyType === "Electricity") {
-      const longResult = energyTotal * info.tariff.residential.current.credit.elec.oneRate;
+      const longResult = energyTotal * info.tariff.residential.current[info.meterType].elec.oneRate;
       unitTotal = longResult;
     } else {
       //CALC UNIT CHARGE GAS
       const byVCF = energyTotal * 1.02264 * 40;
       const byCV = byVCF / 3.6;
-      const kWHCF = byCV * info.tariff.residential.current.credit.gas.oneRate;
+      const kWHCF = byCV * info.tariff.residential.current[info.meterType].gas.oneRate;
       unitTotal = kWHCF;
     }
     // console.log(unitTotal);
@@ -69,6 +72,7 @@ class BillCalculatorContainer extends Component {
     const nextStatementEnergyTotal = energyTotalOneDay * daysInStatement;
 
     this.setState({
+      meterType: info.meterType,
       energyType: info.energyType,
       unitTotal,
       standingTotal,
