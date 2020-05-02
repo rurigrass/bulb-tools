@@ -2,18 +2,13 @@ import React from "react";
 
 const EnergyInput = props => {
 
+  console.log(props);
+  
+
   const rates = ["Day", "Night"];
   let inputs
 
-  if (props.meterRate === "oneRate") {
-    inputs =
-      <input
-        type="number"
-        max="999999"
-        placeholder={props.readingType + " Reading"}
-        onChange={props.energyAmount}
-      />
-  } else {
+  if (props.energyType === "Electricity" && props.meterRate === "twoRate") {
     inputs = rates.map(rate => {
       console.log(rate)
       return (
@@ -26,6 +21,14 @@ const EnergyInput = props => {
         />
       )
     })
+  } else {
+    inputs =
+      <input
+        type="number"
+        max="999999"
+        placeholder={props.readingType + " Reading"}
+        onChange={props.energyAmount}
+      />
   };
 
   return (
