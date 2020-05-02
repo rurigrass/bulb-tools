@@ -32,21 +32,21 @@ class BillCalculatorContainer extends Component {
     let unitTotal, standingTotal, priceTotal;
     //CALCULATE STANDING CHARGE
     if (info.energyType === "Electricity") {
-      const longResult = daysTotal * info.tariff.current.credit.elec.standing;
+      const longResult = daysTotal * info.tariff.residential.current.credit.elec.standing;
       standingTotal = longResult;
     } else {
-      const longResult = daysTotal * info.tariff.current.credit.gas.standing;
+      const longResult = daysTotal * info.tariff.residential.current.credit.gas.standing;
       standingTotal = longResult;
     }
     //CALC UNIT CHARGE ELEC
     if (info.energyType === "Electricity") {
-      const longResult = energyTotal * info.tariff.current.credit.elec.oneRate;
+      const longResult = energyTotal * info.tariff.residential.current.credit.elec.oneRate;
       unitTotal = longResult;
     } else {
       //CALC UNIT CHARGE GAS
       const byVCF = energyTotal * 1.02264 * 40;
       const byCV = byVCF / 3.6;
-      const kWHCF = byCV * info.tariff.current.credit.gas.oneRate;
+      const kWHCF = byCV * info.tariff.residential.current.credit.gas.oneRate;
       unitTotal = kWHCF;
     }
     // console.log(unitTotal);
@@ -84,9 +84,6 @@ class BillCalculatorContainer extends Component {
   };
 
   render() {
-
-    console.log(this.state.unitTotal);
-
 
     let calculatorResult = null;
     if (this.state.unitTotal) {
