@@ -21,6 +21,8 @@ class DisputeCalculator extends Component {
     }
 
     onFormSubmit = event => {
+        console.log(this.state);
+        
         event.preventDefault();
         //second read minus first read
         const energyTotal = this.state.secondEnergyAmount - this.state.firstEnergyAmount;
@@ -89,7 +91,7 @@ class DisputeCalculator extends Component {
                                 }}
                                 energyType={this.state.energyType}
                                 meterRate={this.state.meterRate}
-                                readingType="first"
+                                readingType="First"
                             />
                             <br />
                             <br />
@@ -104,7 +106,7 @@ class DisputeCalculator extends Component {
                                 }}                                
                                 energyType={this.state.energyType}
                                 meterRate={this.state.meterRate}
-                                readingType="second"
+                                readingType="Second"
                             />
                             <br />
                             <br />

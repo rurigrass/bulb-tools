@@ -3,33 +3,27 @@ import React from "react";
 const EnergyInput = props => {
 
   console.log(props);
-  
-
-  const rates = ["Day", "Night"];
-  let inputs
+  // const rates = ["Day", "Night"];
+  let inputs, rates
 
   if (props.energyType === "Electricity" && props.meterRate === "twoRate") {
-    inputs = rates.map(rate => {
-      console.log(rate)
-      return (
-        <input
-          key={rate}
-          type="number"
-          max="999999"
-          placeholder={props.readingType + " Reading " + rate}
-          onChange={props.energyAmount}
-        />
-      )
-    })
+    rates = ["Day", "Night"]
   } else {
-    inputs =
+    rates = ["Day"]
+  }
+
+  inputs = rates.map(rate => {
+    console.log(rate);
+    return (
       <input
+        key={rate}
         type="number"
         max="999999"
-        placeholder={props.readingType + " Reading"}
+        placeholder={props.readingType + " Reading " + (props.meterRate === "twoRate" ? rate : "")}
         onChange={props.energyAmount}
       />
-  };
+    )
+  })
 
   return (
     <div className="ui right labeled input" style={{ marginTop: "10px" }}>
@@ -37,15 +31,6 @@ const EnergyInput = props => {
         {inputs}
         <input type="date" onChange={props.readingDate} />
       </div>
-      {/* <div>
-        <input
-          type="number"
-          max="999999"
-          placeholder={props.readingType + " Reading"}
-          onChange={props.energyAmount}
-        />
-        <input type="date" onChange={props.readingDate} />
-      </div> */}
       {props.energyType === "Electricity" ? (
         <div className="ui basic label">kWh</div>
       ) : (
