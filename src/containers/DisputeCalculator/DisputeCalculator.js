@@ -142,10 +142,11 @@ class DisputeCalculator extends Component {
                     </div>
                 </div>
                 <div>
-
-                    {/* {this.state.disputeReading ? <DisputeCalculatorResult
-                        disputeReading={this.state.disputeReading} energyType={this.state.energyType}
-                    /> : null} */}
+                    {this.state.disputeReadingDay ? <DisputeCalculatorResult
+                        disputeReadingDay={this.state.disputeReadingDay} 
+                        disputeReadingNight={this.state.disputeReadingNight}
+                        energyType={this.state.energyType}
+                    /> : null}
                 </div>
             </div>
         );
