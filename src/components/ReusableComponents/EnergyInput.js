@@ -19,7 +19,7 @@ const EnergyInput = props => {
         key={rate}
         type="number"
         max="999999"
-        placeholder={props.readingType + " Reading " + (props.meterRate === "twoRate" ? rate : "")}
+        placeholder={props.readingType + " Reading " + (props.energyType === "Electricity" && props.meterRate === "twoRate" ? rate : "")}
         onChange={props.energyAmount}
       />
     )
