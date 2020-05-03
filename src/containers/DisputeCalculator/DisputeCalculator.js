@@ -32,7 +32,10 @@ class DisputeCalculator extends Component {
             rates = ["Day", "Night"]
         } else {
             rates = ["Day"]
-            this.setState({ disputeReadingNight: null })
+            this.setState({
+                meterRate: "oneRate",
+                disputeReadingNight: null
+            })
         }
 
         rates.map(rate => {
