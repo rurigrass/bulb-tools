@@ -26,17 +26,16 @@ class DisputeCalculator extends Component {
 
     onFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
         let rates
 
         if (this.state.energyType === "Electricity" && this.state.meterRate === "twoRate") {
             rates = ["Day", "Night"]
         } else {
             rates = ["Day"]
+            this.setState({ disputeReadingNight: null })
         }
 
         rates.map(rate => {
-            console.log(this.state["firstEnergyAmount" + rate]);
             //second read minus first read
             const energyTotal = this.state["secondEnergyAmount" + rate] - this.state["firstEnergyAmount" + rate];
             //difference in days
@@ -72,7 +71,7 @@ class DisputeCalculator extends Component {
         return (
             <div style={{ maxWidth: "400px", margin: "auto" }}>
                 <div className="ui container">
-                    <h1 style={{ textAlign: "center", color: "white" }}>Dispute Calculator (2 rate doesn't work yet)</h1>
+                    <h1 style={{ textAlign: "center", color: "white" }}>Dispute Calculator</h1>
                     <div className="ui compact segment">
                         <form onSubmit={this.onFormSubmit} className="ui form">
                             <RadioGroup
@@ -143,7 +142,7 @@ class DisputeCalculator extends Component {
                 </div>
                 <div>
                     {this.state.disputeReadingDay ? <DisputeCalculatorResult
-                        disputeReadingDay={this.state.disputeReadingDay} 
+                        disputeReadingDay={this.state.disputeReadingDay}
                         disputeReadingNight={this.state.disputeReadingNight}
                         energyType={this.state.energyType}
                     /> : null}
