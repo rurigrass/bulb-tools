@@ -2,7 +2,7 @@ import React from "react";
 
 const EnergyInput = props => {
 
-  console.log(props);
+
   // const rates = ["Day", "Night"];
   let inputs, rates
 
@@ -13,10 +13,10 @@ const EnergyInput = props => {
   }
 
   inputs = rates.map(rate => {
-    console.log(rate);
     return (
       <input
         key={rate}
+        name={"EnergyAmount" + rate}
         type="number"
         max="999999"
         placeholder={props.readingType + " Reading " + (props.energyType === "Electricity" && props.meterRate === "twoRate" ? rate : "")}

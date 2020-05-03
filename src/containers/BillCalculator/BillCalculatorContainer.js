@@ -27,7 +27,7 @@ class BillCalculatorContainer extends Component {
     console.log(this.state.meterType);
     
 
-    const energyTotal = info.secondEnergyAmount - info.firstEnergyAmount;
+    const energyTotal = info.secondEnergyAmountDay - info.firstEnergyAmountDay;
     // const timeAmount = info.secondReadingDate - info.firstReadingDate;
     // const daysTotal = Math.floor(timeAmount / 86400);
     // console.log(format("dd/MM/yyyy", info.secondReadingDate));

@@ -12,20 +12,40 @@ class DisputeCalculator extends Component {
     state = {
         energyType: "Electricity",
         meterRate: "oneRate",
-        firstEnergyAmount: null,
+        firstEnergyAmountDay: null,
+        firstEnergyAmountNight: null,
         firstReadingDate: null,
-        secondEnergyAmount: null,
+        secondEnergyAmountDay: null,
+        secondEnergyAmountNight: null,
         secondReadingDate: null,
         nextStatementDate: null,
         disputeReading: null
     }
 
+
     onFormSubmit = event => {
-        console.log(this.state);
-        
         event.preventDefault();
+        console.log(this.state);
+        // let rates, days
+
+        // if (this.state.energyType === "Electricity" && this.state.meterRate === "twoRate") {
+        //     rates = [[this.state.firstEnergyAmountDay, this.state.secondEnergyAmountDay], [this.state.firstEnergyAmountNight, this.state.secondEnergyAmountNight]]
+        // } else {
+        //     rates = [this.state.firstEnergyAmountDay, this.state.secondEnergyAmountDay]
+        // }
+
+        // if (this.state.energyType === "Electricity" && this.state.meterRate === "twoRate") {
+        //     days = ["Day", "Night"]
+        // } else {
+        //     days = ["Day"]
+        // }
+
+        // days.map(day => {
+        //     console.log(this.state.firstEnergyAmount + day);
+        // })
+
         //second read minus first read
-        const energyTotal = this.state.secondEnergyAmount - this.state.firstEnergyAmount;
+        const energyTotal = this.state.secondEnergyAmountDay - this.state.firstEnergyAmountDay;
         //difference in days
         const daysTotal = differenceInDays(this.state.secondReadingDate, this.state.firstReadingDate);
         //energy total 1 day
@@ -36,7 +56,7 @@ class DisputeCalculator extends Component {
             //total energy use until dispute date
             const energyTotalUntilDispute = energyTotalOneDay * daysUntilDispute;
             //sencond read + energyTotal until dispute
-            const disputeReading = +this.state.secondEnergyAmount + energyTotalUntilDispute;
+            const disputeReading = +this.state.secondEnergyAmountDay + energyTotalUntilDispute;
             this.setState({ disputeReading })
         } else if (this.state.firstReadingDate < this.state.secondReadingDate && this.state.firstReadingDate > this.state.nextStatementDate) {
             //days from dispute date
@@ -44,7 +64,7 @@ class DisputeCalculator extends Component {
             //total energy use from dispute date
             const energyTotalSinceDispute = energyTotalOneDay * daysSinceDispute;
             //first read - energyTotal from dispute
-            const disputeReading = +this.state.firstEnergyAmount - energyTotalSinceDispute;
+            const disputeReading = +this.state.firstEnergyAmountDay - energyTotalSinceDispute;
             this.setState({ disputeReading })
         } else {
             const disputeReading = 0
@@ -54,13 +74,12 @@ class DisputeCalculator extends Component {
     };
     render() {
 
-
         // this.state.disputeReading ? console.log("true") : console.log("false");
 
         return (
             <div style={{ maxWidth: "400px", margin: "auto" }}>
                 <div className="ui container">
-                    <h1 style={{ textAlign: "center", color: "white" }}>Dispute Calculator</h1>
+                    <h1 style={{ textAlign: "center", color: "white" }}>Dispute Calculator (2 rate doesn't work yet)</h1>
                     <div className="ui compact segment">
                         <form onSubmit={this.onFormSubmit} className="ui form">
                             <RadioGroup
@@ -83,7 +102,7 @@ class DisputeCalculator extends Component {
                             Earlier Reading
                             <EnergyInput
                                 energyAmount={e => {
-                                    this.setState({ firstEnergyAmount: e.target.value });
+                                    this.setState({ ["first" + e.target.name]: e.target.value });
                                 }}
                                 readingDate={e => {
                                     const firstReadingDate = new Date(`${e.target.value}`);
@@ -98,12 +117,12 @@ class DisputeCalculator extends Component {
                             Later Reading
                             <EnergyInput
                                 energyAmount={e => {
-                                    this.setState({ secondEnergyAmount: e.target.value });
+                                    this.setState({ ["second" + e.target.name]: e.target.value });
                                 }}
                                 readingDate={e => {
                                     const secondReadingDate = new Date(`${e.target.value}`);
                                     this.setState({ secondReadingDate });
-                                }}                                
+                                }}
                                 energyType={this.state.energyType}
                                 meterRate={this.state.meterRate}
                                 readingType="Second"

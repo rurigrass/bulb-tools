@@ -13,9 +13,9 @@ class BillCalculator extends Component {
     meterType: "credit",
     energyType: "Electricity",
     meterRate: "oneRate",
-    firstEnergyAmount: null,
+    firstEnergyAmountDay: null,
     firstReadingDate: null,
-    secondEnergyAmount: null,
+    secondEnergyAmountDay: null,
     secondReadingDate: null,
     nextStatementDate: null,
     tariff: null
@@ -88,7 +88,7 @@ class BillCalculator extends Component {
           Previous reading
           <EnergyInput
             energyAmount={e => {
-              this.setState({ firstEnergyAmount: e.target.value });
+              this.setState({ ["first" + e.target.name]: e.target.value });
             }}
             readingDate={e => {
               const firstReadingDate = new Date(`${e.target.value}`);
@@ -103,7 +103,7 @@ class BillCalculator extends Component {
           New reading
           <EnergyInput
             energyAmount={e => {
-              this.setState({ secondEnergyAmount: e.target.value });
+              this.setState({ ["second" + e.target.name]: e.target.value });
             }}
             readingDate={e => {
               const secondReadingDate = new Date(`${e.target.value}`);
