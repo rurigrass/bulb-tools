@@ -38,7 +38,7 @@ class DisputeCalculator extends Component {
             })
         }
 
-        rates.map(rate => {
+        rates.forEach(rate => {
             //second read minus first read
             const energyTotal = this.state["secondEnergyAmount" + rate] - this.state["firstEnergyAmount" + rate];
             //difference in days
