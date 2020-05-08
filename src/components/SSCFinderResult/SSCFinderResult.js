@@ -4,8 +4,6 @@ const SSCFinderResult = (props) => {
 
     const { SSC, agreement } = props;
 
-    console.log(props.agreement);
-
     let SSCInfo = SSC.map(e => {
         return (
             <div key={e.tpr} style={{ "marginTop": "10px" }}>
@@ -34,7 +32,7 @@ const SSCFinderResult = (props) => {
             {SSC.length > 0 ?
                 <div className="ui segment">
                     <div className="ui header">
-                        SSC {SSC[0].ssc} Agreement: {agreement[0].agreement} {console.log(typeof agreement.agreement)}
+                        SSC {SSC[0].ssc} Agreement: {agreement[0].agreement}
                     </div>
                     {SSCInfo}
                 </div>
