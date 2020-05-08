@@ -28,6 +28,7 @@ class TariffFinder extends Component {
             // TODO validate that we have the tariff and show error if we don't
 
             this.setState({ tariff })
+            
         } else {
 
         }

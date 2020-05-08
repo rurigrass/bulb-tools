@@ -18,12 +18,23 @@ export const Postcode = (props) => {
 
   return (
     <div>
-  {/* <Wrapper> */}
-    <label>Postcode</label>
-    <div className="ui input">
-      <input type="text"  placeholder="Postcode" onChange={props.regionFn} />
+      {/* <Wrapper> */}
+      <label>Postcode</label>
+      <div className="ui input">
+        <input type="text" placeholder="Postcode" onChange={props.regionFn} />
+      </div>
+      {/* </Wrapper> */}
     </div>
-   {/* </Wrapper> */}
+  )
+}
+
+export const NumberInput = (props) => {
+  return (
+    <div>
+      <label>SSC</label>
+      <div className="ui input">
+        <input type="number" placeholder="SSC" onChange={props.InputFn} />
+      </div>
     </div>
   )
 }

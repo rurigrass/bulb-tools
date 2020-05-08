@@ -2,8 +2,6 @@ import React from "react";
 
 const EnergyInput = props => {
 
-
-  // const rates = ["Day", "Night"];
   let inputs, rates
 
   if (props.energyType === "Electricity" && props.meterRate === "twoRate") {
