@@ -20,7 +20,9 @@ class DisputeCalculator extends Component {
         secondReadingDate: null,
         nextStatementDate: null,
         disputeReadingDay: null,
-        disputeReadingNight: null
+        disputeReadingNight: null,
+        energyTotalOneDayDay: null,
+        energyTotalOneDayNight: null,
     }
 
 
@@ -52,7 +54,10 @@ class DisputeCalculator extends Component {
                 const energyTotalUntilDispute = energyTotalOneDay * daysUntilDispute;
                 //sencond read + energyTotal until dispute
                 const disputeReading = +this.state["secondEnergyAmount" + rate] + energyTotalUntilDispute;
-                this.setState({ ["disputeReading" + rate]: disputeReading })
+                this.setState({
+                    ["disputeReading" + rate]: disputeReading,
+                    ["energyTotalOneDay" + rate]: energyTotalOneDay
+                })
             } else if (this.state.firstReadingDate < this.state.secondReadingDate && this.state.firstReadingDate > this.state.nextStatementDate) {
                 //days from dispute date
                 const daysSinceDispute = differenceInDays(this.state.firstReadingDate, this.state.nextStatementDate);
@@ -60,10 +65,16 @@ class DisputeCalculator extends Component {
                 const energyTotalSinceDispute = energyTotalOneDay * daysSinceDispute;
                 //first read - energyTotal from dispute
                 const disputeReading = +this.state["firstEnergyAmount" + rate] - energyTotalSinceDispute;
-                this.setState({ ["disputeReading" + rate]: disputeReading })
+                this.setState({
+                    ["disputeReading" + rate]: disputeReading,
+                    ["energyTotalOneDay" + rate]: energyTotalOneDay
+                })
             } else {
                 const disputeReading = 0
-                this.setState({ ["disputeReading" + rate]: disputeReading })
+                this.setState({
+                    ["disputeReading" + rate]: disputeReading,
+                    ["energyTotalOneDay" + rate]: energyTotalOneDay
+                })
             }
         })
     };
@@ -148,6 +159,9 @@ class DisputeCalculator extends Component {
                         disputeReadingDay={this.state.disputeReadingDay}
                         disputeReadingNight={this.state.disputeReadingNight}
                         energyType={this.state.energyType}
+                        disputeDate={this.state.nextStatementDate}
+                        energyOneDay={this.state.energyTotalOneDayDay}
+                        energyOneNight={this.state.energyTotalOneDayNight}
                     /> : null}
                 </div>
             </div>
