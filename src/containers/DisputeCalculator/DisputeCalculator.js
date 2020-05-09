@@ -83,7 +83,7 @@ class DisputeCalculator extends Component {
         // this.state.disputeReading ? console.log("true") : console.log("false");
 
         return (
-            <div style={{ maxWidth: "400px", margin: "auto" }}>
+            <div style={{ maxWidth: "500px", margin: "auto" }}>
                 <div className="ui container">
                     <h1 style={{ textAlign: "center", color: "white" }}>Dispute Calculator</h1>
                     <div className="ui compact segment">

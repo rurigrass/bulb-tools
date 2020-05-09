@@ -21,7 +21,7 @@ class SSCFinder extends Component {
     }
     render() {
         return (
-            <div style={{ maxWidth: "400px", margin: "auto" }}>
+            <div style={{ maxWidth: "500px", margin: "auto" }}>
                 <div className="ui container">
                     <h1 style={{ textAlign: "center", color: "white" }}>SSC Finder</h1>
                     <div className="ui segment">
