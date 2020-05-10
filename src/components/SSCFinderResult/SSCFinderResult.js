@@ -6,7 +6,7 @@ const SSCFinderResult = (props) => {
 
     let SSCInfo = SSC.map(e => {
         return (
-            <div key={e.tpr} style={{ "marginTop": "10px" }}>
+            <div key={e.tpr} style={{ marginTop: "10px" }}>
                 <table className="ui very basic collapsing celled table">
                     <tbody>
                         <tr>
@@ -28,7 +28,7 @@ const SSCFinderResult = (props) => {
     })
 
     return (
-        <div>
+        <div style={{ marginBottom: "10px" }}>
             {SSC.length > 0 ?
                 <div className="ui segment">
                     <div className="ui header">

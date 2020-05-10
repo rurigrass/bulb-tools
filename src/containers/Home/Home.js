@@ -45,7 +45,7 @@ const Home = () => {
             </Link>
             <Link to='/ssc-finder'>
                 <Card>
-                    SSC Finder
+                    SSC/TPR Finder
                 </Card>
             </Link>
             <Link to='/business'>
