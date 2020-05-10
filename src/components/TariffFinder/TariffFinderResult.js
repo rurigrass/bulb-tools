@@ -73,7 +73,7 @@ const TariffFinderResult = (props) => {
                         <tr>
                             <td data-label="Unit Rate"><b>Unit Rate</b></td>
                             <td data-label="Energy Cost">{exclVAT(tariff.residential.current[meterType].gas.oneRate * 100).toFixed(4)}p per kWh</td>
-                            <td data-label="Energy Cost">{exclVAT(tariff.residential.current[meterType].gas.oneRate * 100).toFixed(4)}p per kWh</td>
+                            <td data-label="Energy Cost">{(tariff.residential.current[meterType].gas.oneRate * 100).toFixed(4)}p per kWh</td>
                         </tr>
                         <tr>
                             <td data-label="Unit Rate"><b>Standing Charge</b></td>
