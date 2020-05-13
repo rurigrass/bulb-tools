@@ -9,6 +9,12 @@ body {
   }
 }
 
+@media (max-width: 550px) {
+  body {
+    font-size: 8.8px;
+  }
+}
+
 a {
   color: #fff;
 }
