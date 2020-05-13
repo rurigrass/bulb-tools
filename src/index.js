@@ -6,28 +6,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const injectGA = () => {
-  if (typeof window == 'undefined') {
-    return;
-  }
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-166320614-1');
-};
-
-
 const app = (
   <BrowserRouter>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-166320614-1"
-    />
-    <script>{injectGA()}</script>
+    {/* <React.StrictMode> */}
     <App />
+    {/* </React.StrictMode> */}
   </BrowserRouter>
 )
 
