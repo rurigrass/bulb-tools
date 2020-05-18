@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import RadioGroup from '../../components/ReusableComponents/RadioGroup';
-import { Postcode } from '../../components/ReusableComponents/Postcode';
+import { Postcode, NumberInput } from '../../components/ReusableComponents/Postcode';
 import { SSCInput } from '../../components/ReusableComponents/SSCInput';
 import { QuoteGeneratorResult } from '../../components/QuoteGenerator/QuoteGeneratorResult';
 
@@ -13,7 +13,7 @@ class QuoteGenerator extends Component {
 
     state = {
         tariff: null,
-        energyType: "electricity",
+        energyType: "Electricity",
         meterType: "credit",
         related: true,
         FirstSSC: null,
@@ -49,12 +49,29 @@ class QuoteGenerator extends Component {
         }
     }
 
+    EACpush = number => {
+        console.log(number);
+    }
+
+    agreementRate = agreement => {
+        console.log("HELLO");
+
+        let rates
+        if (agreement === "1-rate for E7" || agreement === "2-rate") {
+            rates = ["Day", "Night"]
+        } else {
+            rates = ["Day"]
+        }
+        return rates.map(rate => (
+            <NumberInput
+                searchParam={rate + " EAC"}
+                InputFn={e => { this.EACpush(rate + e.target.value) }}
+            />
+        ))
+    }
+
 
     render() {
-        // for (let i = 0; i < this.state.SSC.length; i++) {
-        //     sscFinderResults.push(
-        //         <SSCFinderResult key={i} SSC={this.state.SSC[i]} agreement={this.state.agreement[i]} />)
-        // }
 
         let meterPoint
 
@@ -78,17 +95,18 @@ class QuoteGenerator extends Component {
                         />
                         <Postcode regionFn={e => { this.filterPostcode(e.target.value) }} />
                         {meterPoint.map(meter => (
-                            <SSCInput
-                                key={meter}
-                                meterPoint={meter}
-                                label={"SSC"}
-                                searchParam={"SSC"}
-                                // related={this.state.related}
-                                InputFn={e => this.findSSC(e.target)}
-                                agreement={this.state[meter + "SSCAgreement"]}
-                            />
-                        ))
-                        }
+                            <div key={meter}>
+                                <SSCInput
+                                    meterPoint={meter}
+                                    label={"SSC"}
+                                    searchParam={"SSC"}
+                                    // related={this.state.related}
+                                    InputFn={e => this.findSSC(e.target)}
+                                    agreement={this.state[meter + "SSCAgreement"]}
+                                />
+                                {this.agreementRate(this.state[meter + "SSCAgreement"])}
+                            </div>
+                        ))}
                     </div>
 
                     {/* DISPLAY THE TARIFF */}

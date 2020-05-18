@@ -35,7 +35,7 @@ class TariffFinder extends Component {
         }
     }
 
-    render() {
+    render() {        
         return (
             <div style={{ maxWidth: "600px", margin: "auto", marginBottom:"10px" }}>
                 <div className="ui container">

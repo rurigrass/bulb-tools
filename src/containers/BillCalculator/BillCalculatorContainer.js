@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BillCalculator from "../../components/BillCalculator/BillCalculator";
 import CalculatorResult from "../../components/BillCalculator/CalculatorResult";
+import TariffFinderResult from "../../components/TariffFinder/TariffFinderResult";
 
 import differenceInDays from "date-fns/differenceInDays"
 import subMonths from 'date-fns/subMonths'
@@ -10,7 +11,7 @@ class BillCalculatorContainer extends Component {
   state = {
     meterType: null,
     energyType: null,
-    meterRate: null,
+    meterRate: "1-rate",
     unitTotal: null,
     standingTotal: null,
     priceTotal: null,
@@ -19,13 +20,14 @@ class BillCalculatorContainer extends Component {
     nextStatementDate: null,
     nextStatementUnitTotal: null,
     nextStatementStandingTotal: null,
-    nextStatementEnergyTotal: null
+    nextStatementEnergyTotal: null,
+    tariff: null
   };
   calculateResult = info => {
 
     console.log(info);
     console.log(this.state.meterType);
-    
+
 
     const energyTotal = info.secondEnergyAmountDay - info.firstEnergyAmountDay;
     // const timeAmount = info.secondReadingDate - info.firstReadingDate;
@@ -84,11 +86,19 @@ class BillCalculatorContainer extends Component {
       nextStatementUnitTotal,
       nextStatementStandingTotal,
       nextStatementPriceTotal,
-      nextStatementEnergyTotal
+      nextStatementEnergyTotal,
+      tariff: info.tariff
     });
   };
 
   render() {
+    console.log("my LOGZ"); 
+    console.log(this.state.tariff);
+    console.log(this.state.energyType);
+    console.log(this.state.meterType);
+    console.log(this.state.meterRate);
+
+
 
     let calculatorResult = null;
     if (this.state.unitTotal) {
@@ -109,10 +119,16 @@ class BillCalculatorContainer extends Component {
     }
 
     return (
-      <div style={{ maxWidth: "500px", margin: "auto", marginBottom:"10px" }}>
+      <div style={{ maxWidth: "500px", margin: "auto", marginBottom: "10px" }}>
         <div className="ui container">
           <h1 style={{ textAlign: "center", color: "white" }}>Bill Calculator</h1>
           <BillCalculator onSubmit={this.calculateResult} />
+          {this.state.tariff ? <TariffFinderResult
+            tariff={this.state.tariff}
+            energyType={this.state.energyType}
+            meterType={this.state.meterType}
+            meterRate={this.state.meterRate}
+          /> : null}
           {calculatorResult}
         </div>
       </div>

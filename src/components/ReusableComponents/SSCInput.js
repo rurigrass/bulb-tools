@@ -12,8 +12,7 @@ const Wrapper = styled.div`
 
 export const SSCInput = props => {
 
-        console.log(props.agreement);
-
+    console.log(props.agreement);
 
     return (
         <Wrapper key={props.meterPoint}>
@@ -26,6 +25,15 @@ export const SSCInput = props => {
                     placeholder={`${props.meterPoint} ${props.label}`}
                     onChange={props.InputFn} />
             </div>
+        </Wrapper>
+    )
+}
+
+export const EACInput = props => {
+
+    return (
+        <Wrapper key={props.meterPoint}>
+            {props.agreement}
         </Wrapper>
     )
 }
