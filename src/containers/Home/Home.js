@@ -48,6 +48,11 @@ const Home = () => {
                     SSC/TPR Finder
                 </Card>
             </Link>
+            {/* <Link to='/quote-generator'>
+                <Card>
+                    Quote Generator 
+                </Card>
+            </Link> */}
             <Link to='/business'>
                 <Card>
                     Business
