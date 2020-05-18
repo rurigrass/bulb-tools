@@ -25,8 +25,8 @@ class BillCalculatorContainer extends Component {
   };
   calculateResult = info => {
 
-    console.log(info);
-    console.log(this.state.meterType);
+    // console.log(info);
+    // console.log(this.state.meterType);
 
 
     const energyTotal = info.secondEnergyAmountDay - info.firstEnergyAmountDay;
@@ -92,13 +92,6 @@ class BillCalculatorContainer extends Component {
   };
 
   render() {
-    console.log("my LOGZ"); 
-    console.log(this.state.tariff);
-    console.log(this.state.energyType);
-    console.log(this.state.meterType);
-    console.log(this.state.meterRate);
-
-
 
     let calculatorResult = null;
     if (this.state.unitTotal) {
@@ -123,13 +116,13 @@ class BillCalculatorContainer extends Component {
         <div className="ui container">
           <h1 style={{ textAlign: "center", color: "white" }}>Bill Calculator</h1>
           <BillCalculator onSubmit={this.calculateResult} />
+          {calculatorResult}
           {this.state.tariff ? <TariffFinderResult
             tariff={this.state.tariff}
             energyType={this.state.energyType}
             meterType={this.state.meterType}
             meterRate={this.state.meterRate}
           /> : null}
-          {calculatorResult}
         </div>
       </div>
     );

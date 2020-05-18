@@ -7,7 +7,8 @@ export const QuoteGeneratorResult = (props) => {
         energyType,
         meterRate,
         meterType,
-        meterPoint } = props;
+        meterPoint,
+        EACS } = props;
 
     let elecUnitRate
 
@@ -22,16 +23,21 @@ export const QuoteGeneratorResult = (props) => {
                 <td data-label="Unit Rate"><b>Unit Rate</b></td>
                 <td data-label="Energy Cost">{exclVAT(tariff.residential.current[meterType].elec.oneRate * 100).toFixed(4)}p per kWh</td>
                 <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.oneRate * 100).toFixed(4)}p per kWh</td>
-                <td></td>
+                <td>
+                    £{meterRate === "1-rate" ? (tariff.residential.current[meterType].elec.oneRate * EACS[meterPoint]).toFixed(2) : ((+EACS[meterPoint + "Day"] + +EACS[meterPoint + "Night"]) * tariff.residential.current[meterType].elec.oneRate).toFixed(2)}
+                </td>
             </tr>
     } else if (meterRate === "2-rate") {
         elecUnitRate = Object.keys(tariff.residential.current[meterType].elec.twoRate).map(rate => {
             return (
                 <tr key={rate}>
-                    <td data-label="Unit Rate"><b>{rate.charAt(0).toUpperCase() + rate.slice(1)}Rate</b></td>
+                    <td data-label="Unit Rate"><b>{rate.charAt(0).toUpperCase() + rate.slice(1) + " "}Rate</b></td>
                     <td data-label="Energy Cost">{exclVAT(tariff.residential.current[meterType].elec.twoRate[rate] * 100).toFixed(4)}p per kWh</td>
                     <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.twoRate[rate] * 100).toFixed(4)}p per kWh</td>
-                    <td></td>
+                    <td>
+                        £{(EACS[meterPoint + (rate.charAt(0).toUpperCase() + rate.slice(1))]
+                            * tariff.residential.current[meterType].elec.twoRate[rate]).toFixed(2)}
+                    </td>
                 </tr>
             )
         })
@@ -41,7 +47,9 @@ export const QuoteGeneratorResult = (props) => {
                 <td data-label="Unit Rate"><b>Unit Rate</b></td>
                 <td data-label="Energy Cost">{exclVAT(tariff.residential.current[meterType].elec.twoRate.night * 100).toFixed(4)}p per kWh</td>
                 <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.twoRate.night * 100).toFixed(4)}p per kWh</td>
-                <td></td>
+                <td>
+                    £{(tariff.residential.current[meterType].elec.twoRate.night * EACS[meterPoint]).toFixed(2)}
+                </td>
             </tr>
     }
 
@@ -59,7 +67,7 @@ export const QuoteGeneratorResult = (props) => {
                             <th></th>
                             <th>excl. VAT</th>
                             <th>incl. VAT</th>
-                            <th>EAC</th>
+                            <th>EAC Cost</th>
                         </tr>
                     </thead>
                     <tbody>

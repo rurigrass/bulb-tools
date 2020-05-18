@@ -37,7 +37,7 @@ const TariffFinderResult = (props) => {
 
 
     return (
-        <div style={{ marginBottom: "10px" }}>
+        <div style={{ marginTop: "15px" }}>
             {energyType === "dual fuel" || energyType === "Electricity" ?
                 <div className="ui segment">
                     <div className="ui header">

@@ -20,6 +20,14 @@ class QuoteGenerator extends Component {
         SecondSSC: null,
         FirstSSCAgreement: null,
         SecondSSCAgreement: null,
+        EACS: {
+            First: null,
+            FirstDay: null,
+            FirstNight: null,
+            Second: null,
+            SecondDay: null,
+            SecondNight: null
+        }
     }
 
     filterPostcode = info => {
@@ -31,7 +39,6 @@ class QuoteGenerator extends Component {
             // TODO validate that GSP exists and show error if not
             const tariff = TariffsByRegion[GSP]
             // TODO validate that we have the tariff and show error if we don't
-            console.log(tariff);
             this.setState({ tariff })
         } else { }
     }
@@ -49,30 +56,30 @@ class QuoteGenerator extends Component {
         }
     }
 
-    EACpush = number => {
-        console.log(number);
+    EACpush = (meter, rate, number) => {
+        let EACS = this.state.EACS;
+        EACS[meter + rate] = number
+        this.setState({ EACS })        
     }
 
-    agreementRate = agreement => {
-        console.log("HELLO");
-
+    EACInputs = (meter, agreement) => {
         let rates
         if (agreement === "1-rate for E7" || agreement === "2-rate") {
             rates = ["Day", "Night"]
         } else {
-            rates = ["Day"]
+            rates = [""]
         }
         return rates.map(rate => (
             <NumberInput
+                key={rate}
                 searchParam={rate + " EAC"}
-                InputFn={e => { this.EACpush(rate + e.target.value) }}
+                InputFn={e => { this.EACpush(meter, rate, e.target.value) }}
             />
         ))
     }
 
 
     render() {
-
         let meterPoint
 
         if (this.state.related === true) {
@@ -84,7 +91,7 @@ class QuoteGenerator extends Component {
         return (
             <div style={{ maxWidth: "600px", margin: "auto", marginBottom: "10px" }}>
                 <div className="ui container">
-                    <h1 style={{ textAlign: "center", color: "white" }}>Quote Generator</h1>
+                    <h1 style={{ textAlign: "center", color: "white" }}>Related Meter Quote Generator</h1>
                     <div className="ui segment">
                         <RadioGroup
                             selectedOption={this.state.meterType}
@@ -104,7 +111,7 @@ class QuoteGenerator extends Component {
                                     InputFn={e => this.findSSC(e.target)}
                                     agreement={this.state[meter + "SSCAgreement"]}
                                 />
-                                {this.agreementRate(this.state[meter + "SSCAgreement"])}
+                                {this.EACInputs(meter, this.state[meter + "SSCAgreement"])}
                             </div>
                         ))}
                     </div>
@@ -118,6 +125,7 @@ class QuoteGenerator extends Component {
                                 SSC={this.state.FirstSSC}
                                 meterRate={this.state.FirstSSCAgreement}
                                 meterPoint={"First"}
+                                EACS={this.state.EACS}
                             />
                             <QuoteGeneratorResult
                                 tariff={this.state.tariff}
@@ -126,6 +134,7 @@ class QuoteGenerator extends Component {
                                 SSC={this.state.SecondSSC}
                                 meterRate={this.state.SecondSSCAgreement}
                                 meterPoint={"Second"}
+                                EACS={this.state.EACS}
                             />
                         </div>
                         : null}
