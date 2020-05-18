@@ -3,6 +3,7 @@ import React from 'react';
 const TariffFinderResult = (props) => {
 
     const { tariff,
+        // energyType,
         meterRate,
         meterType } = props;
 
@@ -13,14 +14,14 @@ const TariffFinderResult = (props) => {
         return price - fivePercent
     }
 
-    if (meterRate === "1 rate") {
+    if (meterRate === "1-rate") {
         elecUnitRate =
             <tr>
                 <td data-label="Unit Rate"><b>Unit Rate</b></td>
                 <td data-label="Energy Cost">{exclVAT(tariff.residential.current[meterType].elec.oneRate * 100).toFixed(4)}p per kWh</td>
                 <td data-label="Energy Cost">{(tariff.residential.current[meterType].elec.oneRate * 100).toFixed(4)}p per kWh</td>
             </tr>
-    } else {
+    } else if (meterRate === "2-rate") {
         elecUnitRate = Object.keys(tariff.residential.current[meterType].elec.twoRate).map(rate => {
             return (
                 <tr key={rate}>
@@ -30,6 +31,8 @@ const TariffFinderResult = (props) => {
                 </tr>
             )
         })
+    } else {
+        return (null)
     }
 
 

@@ -4,12 +4,15 @@ import ReactGa from 'react-ga';
 
 import Layout from './hoc/Layout/Layout';
 import Home from './containers/Home/Home';
-import Business from './containers/Business';
 import BillCalculatorContainer from './containers/BillCalculator/BillCalculatorContainer';
 import TariffFinder from './containers/TariffFinder/TariffFinder';
 import SSCFinder from './containers/SSCFinder/SSCFinder';
 import DisputeCalculator from './containers/DisputeCalculator/DisputeCalculator';
+import Business from './containers/Business';
 import BusinessTariffFinder from './containers/Business/BusinessTariffFinder';
+import Prepay from './containers/Prepay';
+import PaypointFinder from './containers/Prepay/PaypointFinder';
+import QuoteGenerator from './containers/QuoteGenerator/QuoteGenerator';
 
 const App = () => {
 
@@ -18,9 +21,6 @@ const App = () => {
         //to report page view
         ReactGa.pageview(window.location.pathname + window.location.search);
     }, [])
-
-    console.log(window.location.pathname + window.location.search);
-    
 
     return (
         <div>
@@ -32,6 +32,9 @@ const App = () => {
                     <Route path='/ssc-finder' exact component={SSCFinder} />
                     <Route path='/business/tariff-finder' component={BusinessTariffFinder} />
                     <Route path='/business' component={Business} />
+                    <Route path='/prepay/paypoint-finder' component={PaypointFinder} />
+                    <Route path='/prepay' component={Prepay} />
+                    <Route path='/quote-generator' component={QuoteGenerator} />
                     <Route path='/' exact component={Home} />
                 </Switch>
             </Layout>

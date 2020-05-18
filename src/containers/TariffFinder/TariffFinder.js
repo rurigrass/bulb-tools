@@ -10,8 +10,9 @@ import TariffsByRegion from "../../data/TariffsByRegion";
 class TariffFinder extends Component {
 
     state = {
+        energyType: "dual fuel",
         meterType: "credit",
-        meterRate: "1 rate",
+        meterRate: "1-rate",
         tariff: null
     }
 
@@ -36,7 +37,7 @@ class TariffFinder extends Component {
 
     render() {
         return (
-            <div style={{ maxWidth: "500px", margin: "auto", marginBottom:"10px" }}>
+            <div style={{ maxWidth: "600px", margin: "auto", marginBottom:"10px" }}>
                 <div className="ui container">
                     <h1 style={{ textAlign: "center", color: "white" }}>Tariff Finder</h1>
                     <div className="ui segment">
@@ -44,6 +45,15 @@ class TariffFinder extends Component {
                             //brings back the postcode inputted 
                             regionFn={e => { this.filterPostcode(e.target.value) }}
                         />
+                        {/* POINTLESS ADDITION FOR DUAL FUEL */}
+                        {/* <RadioGroup
+                                // name="Fuel Type"
+                                changeFn={e => {
+                                    this.setState({ energyType: e.target.name });
+                                }}
+                                options={["electricity", "gas", "dual fuel"]}
+                                selectedOption={this.state.energyType}
+                            /> */}
                         <RadioGroup
                             // name="Fuel Type"
                             changeFn={e => {
@@ -57,12 +67,13 @@ class TariffFinder extends Component {
                             changeFn={e => {
                                 this.setState({ meterRate: e.target.name });
                             }}
-                            options={["1 rate", "2 rate"]}
+                            options={["1-rate", "2-rate"]}
                             selectedOption={this.state.meterRate}
                         />
                     </div>
                     {this.state.tariff ? <TariffFinderResult
                         tariff={this.state.tariff}
+                        energyType={this.state.energyType}
                         meterType={this.state.meterType}
                         meterRate={this.state.meterRate}
                     /> : null}

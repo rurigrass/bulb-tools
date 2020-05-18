@@ -31,6 +31,7 @@ export const Postcode = (props) => {
 export const NumberInput = (props) => {
   return (
     <div className="ui input">
+      <label>{props.label}</label>
       <input type="number" placeholder={props.searchParam} onChange={props.InputFn} />
     </div>
   )
