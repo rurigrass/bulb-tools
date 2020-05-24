@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import RadioGroup from '../../components/ReusableComponents/RadioGroup';
 import { Postcode, NumberInput } from '../../components/ReusableComponents/Postcode';
+import { CheckBox } from '../../components/ReusableComponents/CheckBox';
 import { SSCInput } from '../../components/ReusableComponents/SSCInput';
 import { QuoteGeneratorResult } from '../../components/QuoteGenerator/QuoteGeneratorResult';
 
@@ -13,7 +14,7 @@ class QuoteGenerator extends Component {
 
     state = {
         tariff: null,
-        energyType: "Electricity",
+        energyType: true,
         meterType: "credit",
         related: true,
         FirstSSC: null,
@@ -26,8 +27,10 @@ class QuoteGenerator extends Component {
             FirstNight: null,
             Second: null,
             SecondDay: null,
-            SecondNight: null
-        }
+            SecondNight: null,
+            Gas: null
+        },
+        totalEACCost: null
     }
 
     filterPostcode = info => {
@@ -58,8 +61,8 @@ class QuoteGenerator extends Component {
 
     EACpush = (meter, rate, number) => {
         let EACS = this.state.EACS;
-        EACS[meter + rate] = number
-        this.setState({ EACS })        
+        EACS[meter + rate] = number  
+        this.setState({ EACS })
     }
 
     EACInputs = (meter, agreement) => {
@@ -78,7 +81,6 @@ class QuoteGenerator extends Component {
         ))
     }
 
-
     render() {
         let meterPoint
 
@@ -91,8 +93,18 @@ class QuoteGenerator extends Component {
         return (
             <div style={{ maxWidth: "600px", margin: "auto", marginBottom: "10px" }}>
                 <div className="ui container">
-                    <h1 style={{ textAlign: "center", color: "white" }}>Related Meter Quote Generator</h1>
+                    <h1 style={{ textAlign: "center", color: "white" }}>Quote Generator</h1>
                     <div className="ui segment">
+                        <CheckBox
+                            label={"Related"}
+                            checked={this.state.related}
+                            checkBoxFn={e => { this.setState({ related: e.target.checked }) }}
+                        />
+                        <CheckBox
+                            label={"Dual Fuel"}
+                            checked={this.state.energyType}
+                            checkBoxFn={e => { this.setState({ energyType: e.target.checked }) }}
+                        />
                         <RadioGroup
                             selectedOption={this.state.meterType}
                             options={["credit", "prepay"]}
@@ -107,33 +119,36 @@ class QuoteGenerator extends Component {
                                     meterPoint={meter}
                                     label={"SSC"}
                                     searchParam={"SSC"}
-                                    // related={this.state.related}
                                     InputFn={e => this.findSSC(e.target)}
                                     agreement={this.state[meter + "SSCAgreement"]}
                                 />
                                 {this.EACInputs(meter, this.state[meter + "SSCAgreement"])}
                             </div>
                         ))}
+                        {this.state.energyType === true ?
+                            <div style={{ marginTop: ".4rem" }}
+                            >
+                                <h5>Gas</h5>
+                                <NumberInput
+                                    key={"someyhing"}
+                                    searchParam={"EAC"}
+                                    InputFn={e => { this.EACpush("", "Gas", e.target.value) }}
+                                    
+                                />
+                            </div>
+                            : null}
                     </div>
 
                     {/* DISPLAY THE TARIFF */}
-                    {this.state.tariff && this.state.FirstSSCAgreement && this.state.SecondSSCAgreement ?
+                    {this.state.tariff && this.state.FirstSSCAgreement ?
                         <div>
-                            <QuoteGeneratorResult
-                                tariff={this.state.tariff}
-                                meterType={this.state.meterType}
-                                SSC={this.state.FirstSSC}
-                                meterRate={this.state.FirstSSCAgreement}
-                                meterPoint={"First"}
-                                EACS={this.state.EACS}
-                            />
                             <QuoteGeneratorResult
                                 tariff={this.state.tariff}
                                 energyType={this.state.energyType}
                                 meterType={this.state.meterType}
-                                SSC={this.state.SecondSSC}
-                                meterRate={this.state.SecondSSCAgreement}
-                                meterPoint={"Second"}
+                                meterPoint={meterPoint}
+                                SSC={[this.state.FirstSSC, this.state.SecondSSC]}
+                                meterRate={[this.state.FirstSSCAgreement, this.state.SecondSSCAgreement]}
                                 EACS={this.state.EACS}
                             />
                         </div>
