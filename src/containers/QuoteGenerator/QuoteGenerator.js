@@ -16,7 +16,7 @@ class QuoteGenerator extends Component {
         tariff: null,
         energyType: true,
         meterType: "credit",
-        related: true,
+        related: false,
         FirstSSC: null,
         SecondSSC: null,
         FirstSSCAgreement: null,
@@ -61,7 +61,7 @@ class QuoteGenerator extends Component {
 
     EACpush = (meter, rate, number) => {
         let EACS = this.state.EACS;
-        EACS[meter + rate] = number  
+        EACS[meter + rate] = number
         this.setState({ EACS })
     }
 
@@ -96,14 +96,14 @@ class QuoteGenerator extends Component {
                     <h1 style={{ textAlign: "center", color: "white" }}>Quote Generator</h1>
                     <div className="ui segment">
                         <CheckBox
-                            label={"Related"}
-                            checked={this.state.related}
-                            checkBoxFn={e => { this.setState({ related: e.target.checked }) }}
-                        />
-                        <CheckBox
                             label={"Dual Fuel"}
                             checked={this.state.energyType}
                             checkBoxFn={e => { this.setState({ energyType: e.target.checked }) }}
+                        />
+                        <CheckBox
+                            label={"Related"}
+                            checked={this.state.related}
+                            checkBoxFn={e => { this.setState({ related: e.target.checked }) }}
                         />
                         <RadioGroup
                             selectedOption={this.state.meterType}
@@ -133,7 +133,7 @@ class QuoteGenerator extends Component {
                                     key={"someyhing"}
                                     searchParam={"EAC"}
                                     InputFn={e => { this.EACpush("", "Gas", e.target.value) }}
-                                    
+
                                 />
                             </div>
                             : null}
