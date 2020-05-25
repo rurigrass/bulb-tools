@@ -95,6 +95,14 @@ class QuoteGenerator extends Component {
                 <div className="ui container">
                     <h1 style={{ textAlign: "center", color: "white" }}>Quote Generator</h1>
                     <div className="ui segment">
+                        <Postcode regionFn={e => { this.filterPostcode(e.target.value) }} />
+                        <RadioGroup
+                            selectedOption={this.state.meterType}
+                            options={["credit", "prepay"]}
+                            changeFn={e => {
+                                this.setState({ meterType: e.target.name });
+                            }}
+                        />
                         <CheckBox
                             label={"Dual Fuel"}
                             checked={this.state.energyType}
@@ -105,14 +113,6 @@ class QuoteGenerator extends Component {
                             checked={this.state.related}
                             checkBoxFn={e => { this.setState({ related: e.target.checked }) }}
                         />
-                        <RadioGroup
-                            selectedOption={this.state.meterType}
-                            options={["credit", "prepay"]}
-                            changeFn={e => {
-                                this.setState({ meterType: e.target.name });
-                            }}
-                        />
-                        <Postcode regionFn={e => { this.filterPostcode(e.target.value) }} />
                         {meterPoint.map(meter => (
                             <div key={meter}>
                                 <SSCInput

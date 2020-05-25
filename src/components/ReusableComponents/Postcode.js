@@ -1,14 +1,11 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
-// const Wrapper = styled.div`
-//   display: grid;
-//   width: 50%;
-
-//   & > * {
-//     margin: 0 0 1rem 0;
-//   }
-// `;
+const Wrapper = styled.div`
+  & > * {
+    margin: 0 .5rem .5rem 0;
+  }
+`;
 export const Postcode = (props) => {
 
   // const regionFn = (e) => {
@@ -17,14 +14,14 @@ export const Postcode = (props) => {
   // }
 
   return (
-    <div>
-      {/* <Wrapper> */}
-      <label>Postcode</label>
+    // <div>
+    <Wrapper>
+      <h5>Postcode</h5>
       <div className="ui input">
         <input type="text" placeholder="Postcode" onChange={props.regionFn} />
       </div>
-      {/* </Wrapper> */}
-    </div>
+    </Wrapper>
+    // </div>
   )
 }
 

@@ -13,6 +13,8 @@ import BusinessTariffFinder from './containers/Business/BusinessTariffFinder';
 import Prepay from './containers/Prepay';
 import PaypointFinder from './containers/Prepay/PaypointFinder';
 import QuoteGenerator from './containers/QuoteGenerator/QuoteGenerator';
+import Checklists from './containers/Checklists';
+import ChecklistsPrepayElec from './containers/Checklists/ChecklistsPrepayElec';
 
 const App = () => {
 
@@ -30,11 +32,14 @@ const App = () => {
                     <Route path='/tariff-finder' component={TariffFinder} />
                     <Route path='/dispute-calculator' component={DisputeCalculator} />
                     <Route path='/ssc-finder' exact component={SSCFinder} />
+                    <Route path='/quote-generator' component={QuoteGenerator} />
                     <Route path='/business/tariff-finder' component={BusinessTariffFinder} />
                     <Route path='/business' component={Business} />
                     <Route path='/prepay/paypoint-finder' component={PaypointFinder} />
                     <Route path='/prepay' component={Prepay} />
-                    <Route path='/quote-generator' component={QuoteGenerator} />
+                    <Route path='/checklists/prepay-elec' component={ChecklistsPrepayElec} />
+                    <Route path='/checklists/prepay-elec' component={ChecklistsPrepayElec} />
+                    <Route path='/checklists' component={Checklists} />
                     <Route path='/' exact component={Home} />
                 </Switch>
             </Layout>

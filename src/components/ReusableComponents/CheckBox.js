@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-    margin: 0 1.5rem 1rem 0; 
+const Wrapper = styled.span`
+    margin: 0 .5rem 0 0; 
 `;
 
 export const CheckBox = (props) => {

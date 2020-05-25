@@ -5,17 +5,17 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   width: 50%;
   & > * {
-    margin: 0 1.5rem 1rem 0;
+    margin: 0 1rem .5rem 0;
   }
 `;
 
 const RadioGroup = props => {
-  const { name, selectedOption, options, changeFn } = props;
-
+  const {selectedOption, options, changeFn } = props;
+//there is also the name prop - 
 
   return (
     <Wrapper>
-        <h5>{name}</h5>
+        {/* <h5>{name}</h5> */}
         {
           options.map((option => {
             return (
