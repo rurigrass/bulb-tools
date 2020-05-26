@@ -46,7 +46,7 @@ const DisputeCalculatorResult = (props) => {
     } else {
         disputedReading =
             <div className="ui segment">
-                <table className="ui very basic collapsing celled table">
+                <table className="ui very basic celled table">
                     <thead>
                         <tr>
                             <th>Read on {format(new Date(disputeDate), "dd/MM/yy")}</th>
