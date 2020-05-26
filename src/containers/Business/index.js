@@ -18,6 +18,7 @@ const Card = styled.div`
     height: 15em;
     border-radius: 15px;
     cursor: pointer;
+    color: #fff;
 `
 
 // I PLAN TO INSERT THE IMAGES
