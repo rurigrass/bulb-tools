@@ -28,7 +28,7 @@ const App = () => {
         <div>
             <Layout>
                 <Switch>
-                    <Route path='/bill-calculator' component={BillCalculatorContainer} />
+                    {/* <Route path='/bill-calculator' component={BillCalculatorContainer} />
                     <Route path='/tariff-finder' component={TariffFinder} />
                     <Route path='/dispute-calculator' component={DisputeCalculator} />
                     <Route path='/ssc-finder' exact component={SSCFinder} />
@@ -39,7 +39,7 @@ const App = () => {
                     <Route path='/prepay' component={Prepay} />
                     <Route path='/checklists/prepay-elec' component={ChecklistsPrepayElec} />
                     <Route path='/checklists/prepay-elec' component={ChecklistsPrepayElec} />
-                    <Route path='/checklists' component={Checklists} />
+                    <Route path='/checklists' component={Checklists} /> */}
                     <Route path='/' exact component={Home} />
                 </Switch>
             </Layout>
